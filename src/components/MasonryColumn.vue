@@ -27,11 +27,23 @@ figure {
   grid-template-rows: 1fr auto;
   margin-bottom: 10px;
   break-inside: avoid;
+
+  position: relative;
 }
 
 figure>img {
   grid-row: 1 / -1;
   grid-column: 1;
+}
+
+figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-8px);
+  background-color: black;
+  position: absolute;
+  padding: 4px;
 }
 
 .container {
