@@ -5,7 +5,7 @@ import MasonryGridTP from './components/MasonryGridTP.vue';
 import MasonryGrid from './components/MasonryGrid.vue';
 const imageList = reactive([])
 
-const methodList = ['column', 'grid', 'grid-tp']
+const methodList = ['grid', 'grid-tp', 'column']
 const currentMethod = ref('grid')
 
 async function getImages(width, height) {
@@ -31,11 +31,12 @@ onMounted(() => {
 
 <template>
   <main>
+    <h1>Masonry Grid use case</h1>
     <div class="radio-group">
       <template v-for="(method, index) in methodList" :key="index">
         <div>
           <input type="radio" :value="method" :checked="method === currentMethod" @change="updateMethod">
-          <label :for="method">{{ method }}</label>
+          <label :for="method">{{ method }}&nbsp;<span v-if="method === 'grid-tp'">(only work on safari)</span> </label>
         </div>
       </template>
     </div>
@@ -46,6 +47,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+h1 {
+  text-align: center;
+}
 .radio-group {
   max-width: 720px;
   margin: 3rem auto;
