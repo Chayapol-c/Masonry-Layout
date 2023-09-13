@@ -39,7 +39,7 @@ const props = defineProps({
   content: counter(box);
   top: 50%;
   left: 50%;
-  transform: translateX(-8px);
+  transform: translate(-8px);
   background-color: black;
   position: absolute;
   padding: 4px;
